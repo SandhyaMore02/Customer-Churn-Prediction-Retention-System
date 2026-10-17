@@ -7,9 +7,15 @@ This module loads the saved pipeline, validates input data, produces churn
 probabilities, assigns risk bands, and applies transparent retention rules.
 """
 
+import sys
 import pandas as pd
 import numpy as np
 from pathlib import Path
+
+# Add project root to sys.path for direct execution
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.data_preprocessing import ID_COL, TARGET_COL, EXCLUDE_COLS, clean_data
 from src.feature_engineering import engineer_features
@@ -213,3 +219,13 @@ def predict_churn(
         print(f"\nPredictions saved to {report_path}")
 
     return output
+
+
+if __name__ == "__main__":
+    import sys
+    raw_dir = Path(__file__).resolve().parent.parent / "data" / "raw"
+    csv_file = sys.argv[1] if len(sys.argv) > 1 else next(raw_dir.glob("*.csv"), None)
+    if csv_file is None:
+        print("Error: No input CSV file specified and none found in data/raw/.")
+        sys.exit(1)
+    predict_churn(csv_file)

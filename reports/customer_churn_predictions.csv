@@ -2390,123 +2390,123 @@ customer_id,churn_probability,churn_predicted,risk_level,contract_type,suggested
 5577-OTWWW,0.5209,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
 3780-YVMFA,0.5205,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
 3466-RITXD,0.5201,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7410-OIEDU,0.52,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6711-VTNRE,0.52,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-9651-GTSAQ,0.5199,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-3030-YZADT,0.5198,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5950-AAAGJ,0.5196,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7975-TZMLR,0.5193,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-5600-PDUJF,0.5192,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7312-XSBAT,0.519,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3130-ICDUP,0.5189,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5136-GFPMB,0.5188,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-8695-WDYEA,0.5187,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1349-WXNGG,0.5186,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6243-OZGFH,0.5183,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5445-GLVOT,0.5179,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1785-BPHTP,0.5178,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7530-HDYDS,0.5176,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2219-MVUSO,0.5175,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7852-LECYP,0.5168,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-9063-ZGTUY,0.5166,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-9793-WECQC,0.5166,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-9626-VFRGG,0.5162,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3863-IUBJR,0.5161,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-9979-RGMZT,0.5161,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-3569-EDBPQ,0.5158,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7346-MEDWM,0.5158,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7632-MNYOY,0.5156,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-0139-IVFJG,0.5155,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3258-SANFR,0.5155,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7521-AFHAB,0.5154,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1453-RZFON,0.5151,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2606-RMDHZ,0.5151,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2273-QCKXA,0.515,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3521-SYVOR,0.5146,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2011-TRQYE,0.5144,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2778-OCLGR,0.5143,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1456-TWCGB,0.5141,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0639-TSIQW,0.5141,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7459-RRWQZ,0.514,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7020-OZKXZ,0.5139,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7284-BUYEC,0.5139,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2041-JIJCI,0.5139,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7774-OJSXI,0.5137,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-6778-YSNIH,0.5136,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2507-QZPQS,0.5136,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-4937-QPZPO,0.5136,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-4716-HHKQH,0.5132,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3055-MJDSB,0.5129,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5780-INQIK,0.5126,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3987-KQDDU,0.5125,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2190-BCXEC,0.5123,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7271-AJDTL,0.5121,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5404-GGUKR,0.5121,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6345-ULYRW,0.5121,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-0927-CNGRH,0.5121,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-9767-FFLEM,0.512,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6180-YBIQI,0.5119,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-8033-VCZGH,0.5119,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-3807-XHCJH,0.5117,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6645-MXQJT,0.5117,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-4657-FWVFY,0.5116,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0247-SLUJI,0.5114,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5013-SBUIH,0.5112,0,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
-7551-JOHTI,0.5108,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1905-OEILC,0.5108,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-4343-EJVQB,0.5107,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0761-AETCS,0.5106,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6804-GDMOI,0.5106,0,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
-8257-RZAHR,0.5105,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1818-ESQMW,0.51,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2070-FNEXE,0.5098,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-4187-CINZD,0.5098,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-5141-ZUVBH,0.5098,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0641-EVBOJ,0.5093,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1550-LOAHA,0.5091,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3192-LNKRK,0.5091,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7401-RUBNK,0.5086,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3207-OYBWH,0.5084,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3589-PPVKW,0.5082,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0013-MHZWF,0.5081,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2207-OBZNX,0.5081,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2957-LOLHO,0.5079,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5118-MUEYH,0.5076,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0577-WHMEV,0.5072,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3688-FTHLT,0.5069,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6815-ABQFQ,0.5067,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-6034-ZRYCV,0.5067,0,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
-8444-WRIDW,0.5058,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-3237-AJGEH,0.5056,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1816-FLZDK,0.5051,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1447-PJGGA,0.5049,0,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
-3082-VQXNH,0.5049,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-8167-GJLRN,0.5048,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7147-AYBAA,0.5045,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-9495-SKLKD,0.5045,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-1135-LMECX,0.5043,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7853-OETYL,0.504,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2812-SFXMJ,0.5038,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6656-JWRQX,0.5034,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6173-GOLSU,0.5033,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2988-PLAHS,0.5028,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-3161-GETRM,0.5027,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-8773-HHUOZ,0.5024,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-7277-OZCGZ,0.5019,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-2929-QNSRW,0.5018,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-5440-VHLUL,0.5016,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-2495-KZNFB,0.5015,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6416-YJTTB,0.5014,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0376-OIWME,0.5012,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5515-RUGKN,0.5011,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-4452-QIIEB,0.501,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-6847-KJLTS,0.501,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0118-JPNOY,0.5008,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0520-FDVVT,0.5008,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
-7683-CBDKJ,0.5007,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-0666-UXTJO,0.5007,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-9529-OFXHY,0.5004,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
-5018-GWURO,0.5003,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7410-OIEDU,0.52,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6711-VTNRE,0.52,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+9651-GTSAQ,0.5199,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+3030-YZADT,0.5198,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5950-AAAGJ,0.5196,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7975-TZMLR,0.5193,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+5600-PDUJF,0.5192,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7312-XSBAT,0.519,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3130-ICDUP,0.5189,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5136-GFPMB,0.5188,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+8695-WDYEA,0.5187,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1349-WXNGG,0.5186,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6243-OZGFH,0.5183,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5445-GLVOT,0.5179,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1785-BPHTP,0.5178,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7530-HDYDS,0.5176,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2219-MVUSO,0.5175,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7852-LECYP,0.5168,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+9063-ZGTUY,0.5166,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+9793-WECQC,0.5166,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+9626-VFRGG,0.5162,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3863-IUBJR,0.5161,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+9979-RGMZT,0.5161,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+3569-EDBPQ,0.5158,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7346-MEDWM,0.5158,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7632-MNYOY,0.5156,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+0139-IVFJG,0.5155,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3258-SANFR,0.5155,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7521-AFHAB,0.5154,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1453-RZFON,0.5151,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2606-RMDHZ,0.5151,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2273-QCKXA,0.515,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3521-SYVOR,0.5146,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2011-TRQYE,0.5144,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2778-OCLGR,0.5143,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1456-TWCGB,0.5141,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0639-TSIQW,0.5141,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7459-RRWQZ,0.514,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7020-OZKXZ,0.5139,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7284-BUYEC,0.5139,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2041-JIJCI,0.5139,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7774-OJSXI,0.5137,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+6778-YSNIH,0.5136,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2507-QZPQS,0.5136,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+4937-QPZPO,0.5136,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+4716-HHKQH,0.5132,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3055-MJDSB,0.5129,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5780-INQIK,0.5126,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3987-KQDDU,0.5125,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2190-BCXEC,0.5123,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7271-AJDTL,0.5121,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5404-GGUKR,0.5121,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6345-ULYRW,0.5121,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+0927-CNGRH,0.5121,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+9767-FFLEM,0.512,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6180-YBIQI,0.5119,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+8033-VCZGH,0.5119,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+3807-XHCJH,0.5117,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6645-MXQJT,0.5117,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+4657-FWVFY,0.5116,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0247-SLUJI,0.5114,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5013-SBUIH,0.5112,1,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
+7551-JOHTI,0.5108,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1905-OEILC,0.5108,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+4343-EJVQB,0.5107,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0761-AETCS,0.5106,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6804-GDMOI,0.5106,1,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
+8257-RZAHR,0.5105,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1818-ESQMW,0.51,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2070-FNEXE,0.5098,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+4187-CINZD,0.5098,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+5141-ZUVBH,0.5098,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0641-EVBOJ,0.5093,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1550-LOAHA,0.5091,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3192-LNKRK,0.5091,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7401-RUBNK,0.5086,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3207-OYBWH,0.5084,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3589-PPVKW,0.5082,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0013-MHZWF,0.5081,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2207-OBZNX,0.5081,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2957-LOLHO,0.5079,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5118-MUEYH,0.5076,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0577-WHMEV,0.5072,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3688-FTHLT,0.5069,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6815-ABQFQ,0.5067,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+6034-ZRYCV,0.5067,1,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
+8444-WRIDW,0.5058,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+3237-AJGEH,0.5056,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1816-FLZDK,0.5051,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1447-PJGGA,0.5049,1,Medium,Two year,Loyalty reward acknowledgement; satisfaction check
+3082-VQXNH,0.5049,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+8167-GJLRN,0.5048,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7147-AYBAA,0.5045,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+9495-SKLKD,0.5045,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+1135-LMECX,0.5043,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7853-OETYL,0.504,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2812-SFXMJ,0.5038,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6656-JWRQX,0.5034,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6173-GOLSU,0.5033,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2988-PLAHS,0.5028,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+3161-GETRM,0.5027,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+8773-HHUOZ,0.5024,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+7277-OZCGZ,0.5019,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+2929-QNSRW,0.5018,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+5440-VHLUL,0.5016,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+2495-KZNFB,0.5015,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6416-YJTTB,0.5014,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0376-OIWME,0.5012,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5515-RUGKN,0.5011,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+4452-QIIEB,0.501,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+6847-KJLTS,0.501,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0118-JPNOY,0.5008,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0520-FDVVT,0.5008,1,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
+7683-CBDKJ,0.5007,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+0666-UXTJO,0.5007,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+9529-OFXHY,0.5004,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
+5018-GWURO,0.5003,1,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
 2607-FBDFF,0.5,0,Medium,Month-to-month,Send targeted retention email with contract upgrade offer
 1625-JAIIY,0.4994,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
 4710-FDUIZ,0.4992,0,Medium,One year,"Offer complementary service trial (e.g., security or backup)"
