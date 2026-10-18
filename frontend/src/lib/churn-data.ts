@@ -1,24 +1,6 @@
-export type RiskTier = "Low" | "Medium" | "High";
+import { Customer, RiskTier } from "@/types/churn";
 
-export type Customer = {
-  id: string;
-  score: number;
-  contract: "Month-to-month" | "One year" | "Two year";
-  internet: "Fiber optic" | "DSL" | "None";
-  payment: string;
-  tenure: number;
-  monthly: number;
-  total: number;
-  gender: string;
-  senior: boolean;
-  partner: boolean;
-  dependents: boolean;
-  phone: string;
-  multipleLines: string;
-  onlineSecurity: string;
-  techSupport: string;
-  paperless: boolean;
-};
+export type { Customer, RiskTier };
 
 export function getRiskTier(score: number): RiskTier {
   if (score >= 70) return "High";

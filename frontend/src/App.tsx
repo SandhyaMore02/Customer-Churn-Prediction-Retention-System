@@ -1,18 +1,25 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { ChurnWorkspace } from "@/components/churniq/ChurnWorkspace";
+import { OverviewPage } from "@/pages/OverviewPage";
+import { CustomersPage } from "@/pages/CustomersPage";
+import { PredictPage } from "@/pages/PredictPage";
+import { ExplainPage } from "@/pages/ExplainPage";
+import { RetentionPage } from "@/pages/RetentionPage";
+import { PerformancePage } from "@/pages/PerformancePage";
+import { InfoPage } from "@/pages/InfoPage";
+import { SettingsPage } from "@/pages/SettingsPage";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ChurnWorkspace screen="overview" />} />
-        <Route path="/customers" element={<ChurnWorkspace screen="customers" />} />
-        <Route path="/predict" element={<ChurnWorkspace screen="predict" />} />
-        <Route path="/explain" element={<ChurnWorkspace screen="explain" />} />
-        <Route path="/retention" element={<ChurnWorkspace screen="retention" />} />
-        <Route path="/performance" element={<ChurnWorkspace screen="performance" />} />
-        <Route path="/info" element={<ChurnWorkspace screen="info" />} />
-        <Route path="/settings" element={<ChurnWorkspace screen="settings" />} />
+        <Route path="/" element={<OverviewPage />} />
+        <Route path="/customers" element={<CustomersPage />} />
+        <Route path="/predict" element={<PredictPage />} />
+        <Route path="/explain" element={<ExplainPage />} />
+        <Route path="/retention" element={<RetentionPage />} />
+        <Route path="/performance" element={<PerformancePage />} />
+        <Route path="/info" element={<InfoPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
