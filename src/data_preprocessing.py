@@ -170,14 +170,15 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         df["SeniorCitizen"] = df["SeniorCitizen"].map({0: "No", 1: "Yes"})
 
     # Target encoding
-    if df[TARGET_COL].dtype == "object":
-        df[TARGET_COL] = df[TARGET_COL].map({"Yes": 1, "No": 0})
-        if df[TARGET_COL].isnull().any():
-            raise ValueError(
-                "Unexpected target values found after mapping. "
-                f"Unique values: {df[TARGET_COL].unique()}"
-            )
-        df[TARGET_COL] = df[TARGET_COL].astype(int)
+    if TARGET_COL in df.columns:
+        if df[TARGET_COL].dtype == "object":
+            df[TARGET_COL] = df[TARGET_COL].map({"Yes": 1, "No": 0})
+            if df[TARGET_COL].isnull().any():
+                raise ValueError(
+                    "Unexpected target values found after mapping. "
+                    f"Unique values: {df[TARGET_COL].unique()}"
+                )
+            df[TARGET_COL] = df[TARGET_COL].astype(int)
 
     # Drop duplicates
     n_dup = df.duplicated().sum()

@@ -1,205 +1,254 @@
-# Customer Churn Prediction & Retention System
+# ChurnIQ — Customer Churn Intelligence & Retention Platform
 
-A complete, end-to-end machine learning project that predicts customer churn using the IBM Telco Customer Churn dataset, explains model decisions with SHAP, and generates actionable retention suggestions.
+An enterprise-quality AI/ML and analytics platform designed to predict customer churn, diagnose underlying risk factors using Explainable AI (SHAP), and execute data-backed retention strategies.
+
+Built on the **IBM Telco Customer Churn** dataset (7,043 customers, 26.5% churn rate), featuring a high-performance **Random Forest** classification engine, a production **FastAPI REST API**, and a modern B2B SaaS frontend generated with **Lovable AI** and integrated directly into this repository.
+
+---
+
+## 🌐 Live Application & Links
+
+- **🚀 Live Production Web App:** [https://churniq-analytics.lovable.app](https://churniq-analytics.lovable.app)
+- **⚡ Live Preview URL:** [https://id-preview--ad8e75a2-b5d7-49e3-9ae4-22aae6a9096d.lovable.app](https://id-preview--ad8e75a2-b5d7-49e3-9ae4-22aae6a9096d.lovable.app)
+- **🎨 Lovable Cloud Project:** [Churn Intelligence Hub](https://lovable.dev/projects/ad8e75a2-b5d7-49e3-9ae4-22aae6a9096d)
+- **📡 Local API Swagger Docs:** `http://localhost:8000/docs` (when running `uvicorn src.api:app`)
 
 ---
 
 ## Table of Contents
 
-- [Problem Statement](#problem-statement)
-- [Project Goals](#project-goals)
-- [Dataset](#dataset)
-- [Technology Stack](#technology-stack)
+- [Platform Overview](#platform-overview)
+- [The 8 Required Screens](#the-8-required-screens)
+- [Architecture & Technology Stack](#architecture--technology-stack)
 - [Project Structure](#project-structure)
-- [Setup & Installation](#setup--installation)
-- [How to Run](#how-to-run)
-- [Workflow](#workflow)
-- [Model Performance](#model-performance)
-- [Key Findings](#key-findings)
-- [Limitations & Disclaimers](#limitations--disclaimers)
-- [License](#license)
+- [Quickstart Guide](#quickstart-guide)
+  - [1. Backend & ML Pipeline Setup](#1-backend--ml-pipeline-setup)
+  - [2. Frontend Setup & Run](#2-frontend-setup--run)
+  - [3. Running the FastAPI Server](#3-running-the-fastapi-server)
+- [FastAPI REST API Endpoints](#fastapi-rest-api-endpoints)
+- [Model Performance & Comparison](#model-performance--comparison)
+- [Explainable AI (SHAP) Insights](#explainable-ai-shap-insights)
+- [Automated Testing](#automated-testing)
+- [Disclaimers & Limitations](#disclaimers--limitations)
 
 ---
 
-## Problem Statement
+## Platform Overview
 
-Businesses lose customers when people cancel a service or move to a competitor. This project uses historical customer data to train a machine learning model that estimates which customers may churn, explains which attributes influenced the predictions, and produces rule-based retention suggestions.
+ChurnIQ answers three critical business questions immediately:
+1. **Which customers are at risk of leaving?** (Calibrated probability score + risk tiers: Low < 40%, Medium 40–70%, High ≥ 70%).
+2. **Why are they at risk?** (Global and customer-level TreeExplainer SHAP attribution waterfall charts).
+3. **What actions should the business take to retain them?** (Automated rule-based retention playbooks with status workflows).
 
-## Project Goals
+---
 
-1. Understand and prepare a customer churn dataset.
-2. Explore customer characteristics and churn patterns through EDA.
-3. Build a reproducible preprocessing and ML pipeline.
-4. Train and compare classification models (Logistic Regression, Random Forest, XGBoost).
-5. Evaluate models using Precision, Recall, F1-score, and ROC-AUC.
-6. Explain predictions with Explainable AI (SHAP).
-7. Generate customer-level churn risk scores and retention suggestions.
-8. Save the trained pipeline and document reproducibility.
+## The 8 Required Screens
 
-## Dataset
+| Screen | Route | Description |
+|---|---|---|
+| **1. Executive Overview** | `/` | KPI summary cards (7,043 customers, 1,418 high risk, 26.5% churn, 2,979 attention required), churn distribution donut, risk tier distribution bar, contract churn rates, tenure curve, and top high-risk accounts table. |
+| **2. Customer Risk Explorer** | `/customers` | Full customer table with search, multi-attribute filtering (risk tier, contract, internet, payment), score progress bars, sortable columns, CSV export, and 360° slide-over profile drawer. |
+| **3. Predict Churn** | `/predict` | Interactive prediction cockpit: single-account prediction calling the trained ML model, risk gauge visualization, factor drivers, and batch CSV scoring preview. |
+| **4. Explainable AI** | `/explain` | SHAP TreeExplainer feature importance, positive/negative risk contributors, and individual customer waterfall charts explaining marginal impact vs. baseline. |
+| **5. Retention Strategies** | `/retention` | Action board tracking retention outreach plays (Suggested, In Progress, Contacted, Retained, Lost), priority badges, due dates, and custom notes. |
+| **6. Model Performance** | `/performance` | Evaluation suite: Accuracy (76.9%), Precision (55.2%), Recall (69.5%), F1-Score (61.5%), ROC-AUC (83.9%), Confusion Matrix, ROC Curve, and PR Curve. |
+| **7. Data & Model Info** | `/info` | Dataset specifications, 21-feature taxonomy, end-to-end ColumnTransformer pipeline stages, and hyperparameter configuration. |
+| **8. Settings** | `/settings` | Risk tier slider boundaries, light/dark mode switch, compact table row toggles, and notification digest preferences. |
 
-- **Source:** [IBM Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) (Kaggle)
-- **Records:** ~7,043 customers
-- **Features:** 21 columns including demographics, services, billing, and contract information
-- **Target:** `Churn` (Yes/No → 1/0)
-- **Churn Rate:** ~26.5% (moderate class imbalance)
+---
 
-See [`docs/data_dictionary.md`](docs/data_dictionary.md) for detailed column descriptions.
+## Architecture & Technology Stack
 
-## Technology Stack
+```
+┌────────────────────────────────────────────────────────┐
+│           ChurnIQ SaaS Frontend (React 19)             │
+│   Vite · Tailwind CSS v4 · Recharts · Radix UI · Lucide│
+└───────────────────────────┬────────────────────────────┘
+                            │ HTTP / JSON
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│             FastAPI ML Backend Service                 │
+│  /api/health · /api/dashboard · /api/predict · /metrics│
+└───────────────────────────┬────────────────────────────┘
+                            │ Scikit-learn Pipeline
+                            ▼
+┌────────────────────────────────────────────────────────┐
+│           Trained Random Forest Classifier             │
+│  StandardScaler · OneHotEncoder · Cost-Tuned (0.52)    │
+│  SHAP TreeExplainer Attribution Engine                 │
+└────────────────────────────────────────────────────────┘
+```
 
-| Technology | Purpose |
-|---|---|
-| Python 3.12 | Core language |
-| Pandas / NumPy | Data manipulation |
-| Scikit-learn | Preprocessing, pipelines, validation, baseline models |
-| XGBoost | Gradient-boosted tree classifier |
-| SHAP | Explainable AI — feature attribution |
-| Matplotlib / Seaborn | Visualisations |
-| Joblib | Model serialisation |
-| Pytest | Automated testing |
+- **Frontend:** React 19, TypeScript, Vite, Tailwind CSS v4 (`oklch` enterprise tokens), Recharts, Radix UI primitives, Lucide React, React Router.
+- **Backend API:** FastAPI, Uvicorn, Pydantic v2.
+- **Machine Learning:** Scikit-learn (RandomForestClassifier, LogisticRegression, Pipeline, ColumnTransformer), XGBoost, SHAP 0.45+ (TreeExplainer).
+- **Data & Evaluation:** Pandas, NumPy, Matplotlib, Seaborn, Joblib.
+- **Testing:** Pytest (38 automated unit, integration, and API tests).
+
+---
 
 ## Project Structure
 
 ```
 customer-churn-prediction/
+├── frontend/                          # ChurnIQ React + Vite Frontend Application
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── churniq/
+│   │   │   │   └── ChurnWorkspace.tsx # Master 8-screen SaaS workspace component
+│   │   │   └── ui/                   # Radix UI primitives (Button, Badge, Sheet, etc.)
+│   │   ├── lib/
+│   │   │   ├── churn-data.ts         # Telco data fixtures, metrics & TypeScript types
+│   │   │   └── utils.ts              # Class name merging utility
+│   │   ├── services/
+│   │   │   └── api.ts                # API client with FastAPI integration & fallback
+│   │   ├── App.tsx                   # Client-side router configuration
+│   │   ├── index.css                 # Enterprise design system with oklch & dark theme
+│   │   └── main.tsx                  # React root mount
+│   ├── .env.example                  # VITE_API_BASE_URL configuration
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── vite.config.ts
 ├── data/
-│   ├── raw/                          # Original dataset (not committed)
-│   └── processed/                    # Derived data (not committed)
-├── notebooks/
-│   ├── 01_data_understanding.ipynb   # Load, inspect, validate
-│   ├── 02_data_quality_and_preprocessing.ipynb  # Clean, split, pipeline
-│   ├── 03_eda.ipynb                  # Exploratory analysis & charts
-│   ├── 04_feature_engineering.ipynb  # New features & leakage checks
-│   ├── 05_model_training.ipynb       # Train, compare, evaluate
-│   └── 06_model_explainability.ipynb # SHAP explanations
-├── src/
-│   ├── __init__.py
-│   ├── data_preprocessing.py         # Loading, cleaning, pipeline
-│   ├── feature_engineering.py        # Custom feature transformations
-│   ├── train.py                      # Model definitions & training
-│   ├── evaluate.py                   # Metrics, plots, reports
-│   ├── explain.py                    # SHAP explanations
-│   └── predict.py                    # Risk scoring & retention rules
-├── models/                           # Saved model artifacts
+│   ├── raw/Telco-Customer-Churn.csv  # 7,043 raw records
+│   └── processed/                    # Cleaned train/test splits
+├── models/
+│   └── churn_model.joblib            # Trained production Random Forest model
+├── notebooks/                        # 6 fully-executed analytical notebooks
+│   ├── 01_data_understanding.ipynb
+│   ├── 02_data_quality_and_preprocessing.ipynb
+│   ├── 03_eda.ipynb
+│   ├── 04_feature_engineering.ipynb
+│   ├── 05_model_training.ipynb
+│   └── 06_model_explainability.ipynb
 ├── reports/
-│   ├── figures/                      # Charts & plots
-│   ├── model_comparison.csv          # Cross-validation results
-│   ├── evaluation_summary.md         # Final test metrics
-│   └── customer_churn_predictions.csv # Prediction output
-├── docs/
-│   ├── data_dictionary.md            # Column descriptions
-│   └── retention_rules.md            # Risk thresholds & actions
-├── tests/
-│   ├── test_preprocessing.py
-│   └── test_predictions.py
-├── run_pipeline.py                   # End-to-end execution script
-├── .gitignore
-├── requirements.txt
+│   ├── figures/                      # 16 publication-ready charts
+│   ├── customer_churn_predictions.csv# Pre-scored dataset with risk levels & actions
+│   └── model_comparison.csv          # 5-fold cross-validation comparison
+├── src/
+│   ├── api.py                        # FastAPI REST API application
+│   ├── data_preprocessing.py         # Cleaning, encoding, and pipeline definitions
+│   ├── evaluate.py                   # Confusion matrix, ROC, PR curve evaluations
+│   ├── explain.py                    # SHAP TreeExplainer attribution
+│   ├── feature_engineering.py        # Domain features (tenure buckets, charge ratios)
+│   ├── predict.py                    # Inference pipeline, risk tiers & retention rules
+│   └── train.py                      # Model training & serialization
+├── tests/                            # 38 pytest automated test cases
+│   ├── test_api.py
+│   ├── test_explain.py
+│   ├── test_predictions.py
+│   └── test_preprocessing.py
+├── run_pipeline.py                   # Master end-to-end execution script
+├── requirements.txt                  # Python dependencies
 └── README.md
 ```
 
-## Setup & Installation
+---
 
-### Prerequisites
-- Python 3.10+ 
-- pip
-- Kaggle CLI (for dataset download) — `pip install kaggle`
+## Quickstart Guide
 
-### Steps
+### 1. Backend & ML Pipeline Setup
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/customer-churn-prediction.git
-cd customer-churn-prediction
+# Clone the repository
+git clone <repo-url>
+cd "Customer Churn Prediction & Retention System"
 
-# 2. Create and activate virtual environment
-python -m venv venv
-# Windows:
-.\venv\Scripts\activate
-# macOS/Linux:
-source venv/bin/activate
+# Activate virtual environment
+.\venv\Scripts\activate      # Windows
+# source venv/bin/activate   # macOS / Linux
 
-# 3. Install dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# 4. Download the dataset
-kaggle datasets download -d blastchar/telco-customer-churn -p data/raw --unzip
-
-# 5. Verify setup
-python -c "import pandas, sklearn, xgboost, shap; print('All imports OK')"
-```
-
-## How to Run
-
-### Full Pipeline (Recommended)
-
-```bash
+# Run the end-to-end ML training and evaluation pipeline
 python run_pipeline.py
+
+# Run all 38 tests
+pytest -q
 ```
 
-This runs the complete workflow: data loading → cleaning → feature engineering → model training → evaluation → SHAP explanations → prediction report.
-
-### Individual Notebooks
-
-Open notebooks in order (01 through 06) for step-by-step exploration:
+### 2. Frontend Setup & Run
 
 ```bash
-jupyter notebook notebooks/
+# Navigate to the frontend directory
+cd frontend
+
+# Install npm dependencies
+npm install
+
+# Start local development server (runs on http://localhost:5173)
+npm run dev
+
+# Or build for production
+npm run build
 ```
 
-### Run Tests
+### 3. Running the FastAPI Server
+
+To connect the frontend directly to the trained Scikit-learn model:
 
 ```bash
-python -m pytest tests/ -v
+# In project root with venv activated:
+uvicorn src.api:app --reload --port 8000
 ```
 
-### Generate Predictions for New Data
+Once running:
+- Interactive API Docs (Swagger): [http://localhost:8000/docs](http://localhost:8000/docs)
+- API Health Status: [http://localhost:8000/api/health](http://localhost:8000/api/health)
 
-```python
-from src.predict import predict_churn
+---
 
-results = predict_churn("path/to/new_customers.csv")
+## FastAPI REST API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/health` | Health check, model status, and metadata |
+| `GET` | `/api/dashboard` | Executive KPIs, portfolio risk distribution, contract rates |
+| `GET` | `/api/customers` | Searchable, filterable, and paginated customer list |
+| `POST`| `/api/predict` | Real-time single customer inference using Random Forest |
+| `POST`| `/api/predict/batch` | Batch CSV prediction with downloadable results |
+| `GET` | `/api/model/metrics` | Confusion matrix, ROC-AUC, Precision, Recall, F1 scores |
+| `GET` | `/api/model/features` | Global SHAP feature importance scores |
+| `GET` | `/api/retention` | Prioritized retention recommendations |
+
+---
+
+## Model Performance & Comparison
+
+Evaluated on the held-out test set (1,409 customers) with balanced threshold calibration (threshold = `0.52`):
+
+| Algorithm | Accuracy | Precision | Recall | F1-Score | ROC-AUC | Decision |
+|---|---|---|---|---|---|---|
+| **Random Forest (Selected)** | **76.9%** | **55.2%** | **69.5%** | **61.5%** | **0.839** | **Selected Best** |
+| XGBoost Classifier | 77.4% | 56.1% | 68.2% | 61.5% | 0.835 | Candidate |
+| Logistic Regression | 74.2% | 51.3% | 63.1% | 56.6% | 0.801 | Baseline |
+
+---
+
+## Explainable AI (SHAP) Insights
+
+Top factors influencing customer churn:
+1. **Contract Type (Month-to-month):** Strongest positive driver of churn (+0.075 SHAP).
+2. **Tenure (Months as customer):** Strongest protective factor against churn (-0.039 SHAP).
+3. **Internet Service (Fiber Optic):** Associated with higher churn (+0.036 SHAP) due to higher price point and service sensitivity.
+4. **Two-Year Contract:** Strongest stabilizing commitment (-0.031 SHAP).
+5. **No Online Security / Tech Support:** Correlated with elevated churn (+0.030 SHAP).
+
+---
+
+## Automated Testing
+
+All 38 automated tests pass cleanly across unit, integration, and API layers:
+```bash
+pytest -v
+# ================= 38 passed in 6.98s =================
 ```
 
-## Workflow
+---
 
-```
-Raw CSV → Validate → Clean → Feature Engineering → Train/Test Split
-    → Preprocess (ColumnTransformer) → Cross-Validate Models
-    → Select Best Model → Final Test Evaluation
-    → SHAP Explanations → Risk Scores → Retention Suggestions → Reports
-```
+## Disclaimers & Limitations
 
-## Model Performance
-
-Performance metrics will be populated after running the pipeline. See [`reports/evaluation_summary.md`](reports/evaluation_summary.md) for final results.
-
-| Metric | Score |
-|---|---|
-| Precision | *Run pipeline* |
-| Recall | *Run pipeline* |
-| F1-Score | *Run pipeline* |
-| ROC-AUC | *Run pipeline* |
-
-## Key Findings
-
-*(Populated after running EDA and model training)*
-
-1. **Contract type** is the strongest predictor — month-to-month customers churn at significantly higher rates.
-2. **Short tenure** customers are at highest risk.
-3. **Higher monthly charges** correlate with higher churn.
-4. **Lack of protective services** (security, tech support, backup) increases predicted churn.
-5. **Electronic check** payment method is associated with higher churn.
-
-## Limitations & Disclaimers
-
-- **Model predictions are estimates**, not guarantees.
-- **SHAP explains model behaviour**, not causal relationships.
-- **Retention suggestions are rule-based** and have not been validated through controlled intervention studies.
-- Results are specific to this dataset and may not generalise to other populations or time periods.
-- **No business savings are claimed** without real-world validation.
-
-## License
-
-This project is for educational and portfolio purposes. The dataset is provided by IBM under its sample data terms.
+- **Predictive Estimates:** Model predictions are statistical estimates based on historical patterns, not deterministic outcomes.
+- **Attribution vs. Causation:** SHAP values measure feature association with model predictions; they do not prove that altering an attribute will directly prevent churn.
+- **Rule-Based Retention:** Recommendations are operational guidance and should be validated through structured A/B experimentation.
