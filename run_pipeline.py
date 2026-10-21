@@ -231,8 +231,8 @@ def main():
     print("PHASE 9: GENERATING CUSTOMER PREDICTIONS REPORT")
     print("=" * 60)
 
-    # Use the raw data file for predictions (simulating new data input)
-    raw_csv = list((PROJECT_ROOT / "data" / "raw").glob("*.csv"))
+    from src.paths import RAW_DATA_DIR
+    raw_csv = list(RAW_DATA_DIR.glob("*.csv"))
     if raw_csv:
         predict_churn(raw_csv[0], threshold=optimal_threshold)
     else:

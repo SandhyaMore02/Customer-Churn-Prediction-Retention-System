@@ -23,16 +23,10 @@ from src.data_preprocessing import build_preprocessor, identify_column_types
 
 # ---------------------------------------------------------------------------
 # Constants
-def _find_repo_root() -> Path:
-    p = Path(__file__).resolve()
-    for parent in p.parents:
-        if (parent / "models").exists() and (parent / "data").exists():
-            return parent
-    return Path(__file__).resolve().parent.parent
+# ---------------------------------------------------------------------------
 
-_ROOT = _find_repo_root()
-MODELS_DIR = _ROOT / "models"
-REPORTS_DIR = _ROOT / "reports"
+from src.paths import MODELS_DIR, REPORTS_DIR
+
 RANDOM_STATE = 42
 CV_FOLDS = 5
 SCORING = ["precision", "recall", "f1", "roc_auc"]

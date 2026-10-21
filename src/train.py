@@ -25,8 +25,8 @@ from src.data_preprocessing import build_preprocessor, identify_column_types
 # Constants
 # ---------------------------------------------------------------------------
 
-MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
-REPORTS_DIR = Path(__file__).resolve().parent.parent / "reports"
+from src.paths import MODELS_DIR, REPORTS_DIR
+
 RANDOM_STATE = 42
 CV_FOLDS = 5
 SCORING = ["precision", "recall", "f1", "roc_auc"]

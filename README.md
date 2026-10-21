@@ -91,60 +91,30 @@ ChurnIQ answers three critical business questions immediately:
 
 ```
 customer-churn-prediction/
-├── frontend/                          # ChurnIQ React 19 + TypeScript + Vite UI
+├── frontend/                          # ChurnIQ React + Vite Frontend Application
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── common/                # MetricCard, RiskPill, Panel, FilterSelect
-│   │   │   ├── customer/              # CustomerTable, CustomerDrawer
-│   │   │   ├── layout/                # AppSidebar, Header, DashboardLayout
-│   │   │   └── ui/                    # Radix UI design primitives
-│   │   ├── pages/                     # Dedicated views for all 8 screens
-│   │   │   ├── OverviewPage.tsx
-│   │   │   ├── CustomersPage.tsx
-│   │   │   ├── PredictPage.tsx
-│   │   │   ├── ExplainPage.tsx
-│   │   │   ├── RetentionPage.tsx
-│   │   │   ├── PerformancePage.tsx
-│   │   │   ├── InfoPage.tsx
-│   │   │   └── SettingsPage.tsx
-│   │   ├── services/
-│   │   │   └── api.ts                 # Centralized API service with offline fallback
-│   │   ├── types/
-│   │   │   └── churn.ts               # Shared TypeScript domain interfaces
+│   │   │   ├── churniq/
+│   │   │   │   └── ChurnWorkspace.tsx # Master 8-screen SaaS workspace component
+│   │   │   └── ui/                   # Radix UI primitives (Button, Badge, Sheet, etc.)
 │   │   ├── lib/
-│   │   │   ├── churn-data.ts          # Telco data fixtures, metrics & types
-│   │   │   └── utils.ts               # Class name merging utility
-│   │   ├── App.tsx                    # React Router configuration
-│   │   ├── index.css                  # Enterprise Tailwind CSS v4 design tokens
-│   │   └── main.tsx                   # React root mount
-│   ├── .env.example                   # VITE_API_BASE_URL configuration
+│   │   │   ├── churn-data.ts         # Telco data fixtures, metrics & TypeScript types
+│   │   │   └── utils.ts              # Class name merging utility
+│   │   ├── services/
+│   │   │   └── api.ts                # API client with FastAPI integration & fallback
+│   │   ├── App.tsx                   # Client-side router configuration
+│   │   ├── index.css                 # Enterprise design system with oklch & dark theme
+│   │   └── main.tsx                  # React root mount
+│   ├── .env.example                  # VITE_API_BASE_URL configuration
 │   ├── package.json
 │   ├── tsconfig.json
 │   └── vite.config.ts
-├── backend/                           # Python Backend Service & ML Engine
-│   ├── src/
-│   │   ├── __init__.py
-│   │   ├── api.py                     # FastAPI REST API application
-│   │   ├── data_preprocessing.py      # Cleaning, encoding & ColumnTransformer
-│   │   ├── feature_engineering.py     # Custom feature transformations
-│   │   ├── train.py                   # Model training & cross-validation
-│   │   ├── evaluate.py                # Confusion matrix, ROC, PR curves
-│   │   ├── explain.py                 # SHAP TreeExplainer attribution
-│   │   └── predict.py                 # Inference & rule-based retention playbooks
-│   ├── tests/                         # 38 automated pytest test cases
-│   │   ├── test_api.py
-│   │   ├── test_explain.py
-│   │   ├── test_predictions.py
-│   │   └── test_preprocessing.py
-│   ├── requirements.txt               # Backend dependencies
-│   ├── run_pipeline.py                # End-to-end execution script
-│   └── README.md                      # Backend documentation
 ├── data/
-│   ├── raw/Telco-Customer-Churn.csv   # 7,043 raw records
-│   └── processed/                     # Cleaned train/test splits
+│   ├── raw/Telco-Customer-Churn.csv  # 7,043 raw records
+│   └── processed/                    # Cleaned train/test splits
 ├── models/
-│   └── churn_model.joblib             # Trained production Random Forest model
-├── notebooks/                         # 6 fully-executed analytical notebooks
+│   └── churn_model.joblib            # Trained production Random Forest model
+├── notebooks/                        # 6 fully-executed analytical notebooks
 │   ├── 01_data_understanding.ipynb
 │   ├── 02_data_quality_and_preprocessing.ipynb
 │   ├── 03_eda.ipynb
@@ -152,9 +122,24 @@ customer-churn-prediction/
 │   ├── 05_model_training.ipynb
 │   └── 06_model_explainability.ipynb
 ├── reports/
-│   ├── figures/                       # 16 publication-ready charts
-│   ├── customer_churn_predictions.csv # Pre-scored dataset with risk levels & actions
-│   └── model_comparison.csv           # 5-fold cross-validation comparison
+│   ├── figures/                      # 16 publication-ready charts
+│   ├── customer_churn_predictions.csv# Pre-scored dataset with risk levels & actions
+│   └── model_comparison.csv          # 5-fold cross-validation comparison
+├── src/
+│   ├── api.py                        # FastAPI REST API application
+│   ├── data_preprocessing.py         # Cleaning, encoding, and pipeline definitions
+│   ├── evaluate.py                   # Confusion matrix, ROC, PR curve evaluations
+│   ├── explain.py                    # SHAP TreeExplainer attribution
+│   ├── feature_engineering.py        # Domain features (tenure buckets, charge ratios)
+│   ├── predict.py                    # Inference pipeline, risk tiers & retention rules
+│   └── train.py                      # Model training & serialization
+├── tests/                            # 38 pytest automated test cases
+│   ├── test_api.py
+│   ├── test_explain.py
+│   ├── test_predictions.py
+│   └── test_preprocessing.py
+├── run_pipeline.py                   # Master end-to-end execution script
+├── requirements.txt                  # Python dependencies
 └── README.md
 ```
 
@@ -174,13 +159,13 @@ cd "Customer Churn Prediction & Retention System"
 # source venv/bin/activate   # macOS / Linux
 
 # Install dependencies
-pip install -r backend/requirements.txt
+pip install -r requirements.txt
 
 # Run the end-to-end ML training and evaluation pipeline
-python backend/run_pipeline.py
+python run_pipeline.py
 
-# Run all 38 backend tests
-pytest backend/tests/ -v
+# Run all 38 tests
+pytest -q
 ```
 
 ### 2. Frontend Setup & Run
@@ -205,7 +190,7 @@ To connect the frontend directly to the trained Scikit-learn model:
 
 ```bash
 # In project root with venv activated:
-uvicorn backend.src.api:app --reload --port 8000
+uvicorn src.api:app --reload --port 8000
 ```
 
 Once running:

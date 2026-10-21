@@ -1,8 +1,8 @@
-# ChurnIQ Backend Service & ML Pipeline
+# ChurnIQ Backend Service & ML Engine
 
-The Python backend service for the **Customer Churn Prediction & Retention System (ChurnIQ)**.
+The Python backend service and machine learning pipeline for **ChurnIQ — Customer Churn Intelligence Platform**.
 
-## Structure
+## Architecture
 
 ```
 backend/
@@ -14,7 +14,8 @@ backend/
 │   ├── train.py                  # Model training, cross-validation & serialization
 │   ├── evaluate.py               # Confusion matrix, ROC curve, PR curve evaluations
 │   ├── explain.py                # SHAP TreeExplainer feature attribution
-│   └── predict.py                # Real-time inference & rule-based retention playbooks
+│   ├── predict.py                # Real-time inference & rule-based retention playbooks
+│   └── paths.py                  # Centralized path resolution
 ├── tests/
 │   ├── test_api.py               # FastAPI endpoint tests
 │   ├── test_explain.py           # SHAP explainer tests

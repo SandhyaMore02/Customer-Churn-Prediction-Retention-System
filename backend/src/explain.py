@@ -19,14 +19,9 @@ from sklearn.pipeline import Pipeline
 
 # ---------------------------------------------------------------------------
 # Constants
-def _find_repo_root() -> Path:
-    p = Path(__file__).resolve()
-    for parent in p.parents:
-        if (parent / "models").exists() and (parent / "data").exists():
-            return parent
-    return Path(__file__).resolve().parent.parent
+# ---------------------------------------------------------------------------
 
-FIGURES_DIR = _find_repo_root() / "reports" / "figures"
+from src.paths import FIGURES_DIR
 
 
 # ---------------------------------------------------------------------------

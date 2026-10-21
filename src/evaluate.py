@@ -29,8 +29,7 @@ from sklearn.metrics import (
 # Constants
 # ---------------------------------------------------------------------------
 
-REPORTS_DIR = Path(__file__).resolve().parent.parent / "reports"
-FIGURES_DIR = REPORTS_DIR / "figures"
+from src.paths import REPORTS_DIR, FIGURES_DIR
 
 
 # ---------------------------------------------------------------------------

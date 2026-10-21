@@ -22,16 +22,9 @@ from sklearn.impute import SimpleImputer
 
 # ---------------------------------------------------------------------------
 # Constants
-def _find_repo_root() -> Path:
-    p = Path(__file__).resolve()
-    for parent in p.parents:
-        if (parent / "models").exists() and (parent / "data").exists():
-            return parent
-    return Path(__file__).resolve().parent.parent
+# ---------------------------------------------------------------------------
 
-_ROOT = _find_repo_root()
-RAW_DATA_DIR = _ROOT / "data" / "raw"
-PROCESSED_DATA_DIR = _ROOT / "data" / "processed"
+from src.paths import RAW_DATA_DIR, PROCESSED_DATA_DIR
 
 TARGET_COL = "Churn"
 ID_COL = "customerID"

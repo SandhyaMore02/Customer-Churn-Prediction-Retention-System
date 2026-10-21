@@ -18,19 +18,9 @@ import sys
 from pathlib import Path
 from typing import List, Optional, Dict, Any
 
-def _find_repo_root() -> Path:
-    p = Path(__file__).resolve()
-    for parent in p.parents:
-        if (parent / "models").exists() and (parent / "data").exists():
-            return parent
-    return Path(__file__).resolve().parent.parent
-
-PROJECT_ROOT = _find_repo_root()
-BACKEND_DIR = Path(__file__).resolve().parent.parent
-
-for p in [str(PROJECT_ROOT), str(BACKEND_DIR)]:
-    if p not in sys.path:
-        sys.path.insert(0, p)
+from src.paths import REPO_ROOT as PROJECT_ROOT, REPORTS_DIR, MODELS_DIR
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import pandas as pd
 import numpy as np
@@ -243,7 +233,7 @@ def predict_single_customer(customer: CustomerInput):
         raise HTTPException(status_code=503, detail="ML model is not loaded.")
 
     # Create raw row
-    data_dict = customer.dict()
+    data_dict = customer.model_dump() if hasattr(customer, "model_dump") else customer.dict()
     if data_dict["TotalCharges"] is None:
         data_dict["TotalCharges"] = round(data_dict["MonthlyCharges"] * max(1, data_dict["tenure"]), 2)
 

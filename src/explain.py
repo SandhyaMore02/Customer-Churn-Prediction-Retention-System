@@ -21,7 +21,7 @@ from sklearn.pipeline import Pipeline
 # Constants
 # ---------------------------------------------------------------------------
 
-FIGURES_DIR = Path(__file__).resolve().parent.parent / "reports" / "figures"
+from src.paths import FIGURES_DIR
 
 
 # ---------------------------------------------------------------------------

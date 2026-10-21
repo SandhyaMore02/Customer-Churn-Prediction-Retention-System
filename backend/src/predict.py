@@ -12,19 +12,10 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 
-def _find_repo_root() -> Path:
-    p = Path(__file__).resolve()
-    for parent in p.parents:
-        if (parent / "models").exists() and (parent / "data").exists():
-            return parent
-    return Path(__file__).resolve().parent.parent
-
-PROJECT_ROOT = _find_repo_root()
-BACKEND_DIR = Path(__file__).resolve().parent.parent
-
-for p in [str(PROJECT_ROOT), str(BACKEND_DIR)]:
-    if p not in sys.path:
-        sys.path.insert(0, p)
+# Add project root to sys.path for direct execution
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.data_preprocessing import ID_COL, TARGET_COL, EXCLUDE_COLS, clean_data
 from src.feature_engineering import engineer_features

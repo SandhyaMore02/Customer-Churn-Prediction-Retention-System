@@ -24,8 +24,7 @@ from sklearn.impute import SimpleImputer
 # Constants
 # ---------------------------------------------------------------------------
 
-RAW_DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
-PROCESSED_DATA_DIR = Path(__file__).resolve().parent.parent / "data" / "processed"
+from src.paths import RAW_DATA_DIR, PROCESSED_DATA_DIR
 
 TARGET_COL = "Churn"
 ID_COL = "customerID"

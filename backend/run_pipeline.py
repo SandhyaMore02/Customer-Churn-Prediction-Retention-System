@@ -41,19 +41,9 @@ warnings.filterwarnings("ignore")
 
 from pathlib import Path
 
-def _find_repo_root() -> Path:
-    p = Path(__file__).resolve()
-    for parent in [p.parent, p.parent.parent]:
-        if (parent / "data").exists() and (parent / "models").exists():
-            return parent
-    return p.parent
-
-PROJECT_ROOT = _find_repo_root()
-BACKEND_DIR = Path(__file__).resolve().parent
-
-for p in [str(PROJECT_ROOT), str(BACKEND_DIR)]:
-    if p not in sys.path:
-        sys.path.insert(0, p)
+# Add project root to path
+PROJECT_ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.data_preprocessing import (
     load_raw_data,
@@ -241,8 +231,8 @@ def main():
     print("PHASE 9: GENERATING CUSTOMER PREDICTIONS REPORT")
     print("=" * 60)
 
-    # Use the raw data file for predictions (simulating new data input)
-    raw_csv = list((PROJECT_ROOT / "data" / "raw").glob("*.csv"))
+    from src.paths import RAW_DATA_DIR
+    raw_csv = list(RAW_DATA_DIR.glob("*.csv"))
     if raw_csv:
         predict_churn(raw_csv[0], threshold=optimal_threshold)
     else:
